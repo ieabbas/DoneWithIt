@@ -1,15 +1,38 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
+
+//VIDEO PROGRESS: 57:36//
+
+//SafeAreaView considers notch space when placing text/images/assets
+
+/* 
+  Image Passing:
+    Passing an image through folders locally: <Image source={require("./assets/icon.png")} /> 
+    Passing an image from the internet: <Image source={{uri: "https://i.picsum.photos/id/802/200/300.jpg?hmac=q6ItUSh1lSpO66uCg28JvcSG6TC_XXIOgCwifpzTD9M"}} />
+
+*/
 
 export default function App() {
+  const handlePress = () => console.log("You pressed it, N I C E.");
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.blackText}>F U D G E</Text>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.blackText} onPress={handlePress}>
+        F U D G E
+      </Text>
       <Text style={styles.blackText}>M E</Text>
       <Text style={styles.blackText}>S O N</Text>
+      <Image
+        source={{
+          width: 200,
+          height: 300,
+          uri:
+            "https://i.picsum.photos/id/802/200/300.jpg?hmac=q6ItUSh1lSpO66uCg28JvcSG6TC_XXIOgCwifpzTD9M",
+        }}
+      />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
