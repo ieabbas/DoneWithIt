@@ -7,6 +7,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.blackText}>F U D G E</Text>
       <Text style={styles.blackText}>M E</Text>
+      <Text style={styles.blackText}>S O N</Text>
       <StatusBar style="auto" />
     </View>
   );
