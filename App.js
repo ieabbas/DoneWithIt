@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   Image,
   TouchableHighlight,
+  Button,
 } from "react-native";
 
 //VIDEO PROGRESS: 57:36//
@@ -24,12 +25,13 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="orange" />
       <Text style={styles.blackText} onPress={handlePress}>
         F U D G E
       </Text>
       <Text style={styles.blackText}>M E</Text>
       <Text style={styles.blackText}>S O N</Text>
-      <TouchableHighlight>
+      <TouchableHighlight underlayColor="black">
         <Image
           source={{
             width: 200,
@@ -40,11 +42,21 @@ export default function App() {
         />
       </TouchableHighlight>
       <Button
-        color="dodgerBlue"
-        title="S E C O N D CLICK ME"
-        onPress={() => alert("you touched da button")} // an onPress function defined to trigger a platform independent alert (syntax is single quote string value)
+        title="Button with options!"
+        onPress={() =>
+          // an onPress that provides an array of choices when pressed
+          Alert.alert("My title", "My message", [
+            {
+              text: "Yes option",
+              onPress: () => console.log("Yes button pressed."),
+            },
+            {
+              text: "No option",
+              onPress: () => console.log("No button pressed."),
+            },
+          ])
+        }
       />
-      <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
