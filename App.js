@@ -1,6 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableHighlight,
+} from "react-native";
 
 //VIDEO PROGRESS: 57:36//
 
@@ -10,7 +17,6 @@ import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
   Image Passing:
     Passing an image through folders locally: <Image source={require("./assets/icon.png")} /> 
     Passing an image from the internet: <Image source={{uri: "https://i.picsum.photos/id/802/200/300.jpg?hmac=q6ItUSh1lSpO66uCg28JvcSG6TC_XXIOgCwifpzTD9M"}} />
-
 */
 
 export default function App() {
@@ -23,13 +29,20 @@ export default function App() {
       </Text>
       <Text style={styles.blackText}>M E</Text>
       <Text style={styles.blackText}>S O N</Text>
-      <Image
-        source={{
-          width: 200,
-          height: 300,
-          uri:
-            "https://i.picsum.photos/id/802/200/300.jpg?hmac=q6ItUSh1lSpO66uCg28JvcSG6TC_XXIOgCwifpzTD9M",
-        }}
+      <TouchableHighlight>
+        <Image
+          source={{
+            width: 200,
+            height: 300,
+            uri:
+              "https://i.picsum.photos/id/802/200/300.jpg?hmac=q6ItUSh1lSpO66uCg28JvcSG6TC_XXIOgCwifpzTD9M",
+          }}
+        />
+      </TouchableHighlight>
+      <Button
+        color="dodgerBlue"
+        title="S E C O N D CLICK ME"
+        onPress={() => alert("you touched da button")} // an onPress function defined to trigger a platform independent alert (syntax is single quote string value)
       />
       <StatusBar style="auto" />
     </SafeAreaView>
